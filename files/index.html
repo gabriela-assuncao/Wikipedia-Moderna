@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segurança Digital – WikiModerna</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hack do Checkbox em CSS Puro para Alternância de Tema -->
+  <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
+
+  <div class="site-wrapper">
+    <!-- Cabeçalho Principal -->
+    <header class="header">
+      <div class="header-left">
+        <a href="#" class="logo">
+          <span class="logo-icon">W</span>
+          <span class="logo-text">Wiki<span>Moderna</span></span>
+        </a>
+      </div>
+
+      <div class="header-search">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" placeholder="Pesquisar na WikiModerna..." class="search-input">
+      </div>
+
+      <div class="header-right">
+        <!-- Botão Visual de Alternância de Tema -->
+        <label for="theme-toggle" class="theme-toggle-btn" title="Alternar Tema Claro/Escuro">
+          <span class="theme-text">Tema</span>
+        </label>
+      </div>
+    </header>
+
+    <!-- Estrutura do Conteúdo -->
+    <div class="layout-container">
+      
+      <!-- Navegação Lateral / Sumário -->
+      <aside class="sidebar">
+        <nav class="toc">
+          <h3 class="toc-title">Conteúdo</h3>
+          <ul>
+            <li><a href="#introducao">1. Introdução</a></li>
+            <li><a href="#triade-cid">2. A Tríade CIA (CID)</a></li>
+            <li><a href="#ameacas">3. Principais Ameaças</a></li>
+            <li><a href="#boas-praticas">4. Boas Práticas</a></li>
+            <li><a href="#referencias">5. Referências</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Artigo Principal -->
+      <main class="content">
+        
+        <div class="article-header">
+          <h1 class="article-title">Segurança Digital</h1>
+          <p class="article-subtitle">Proteção de sistemas de informação, redes e dados contra ataques cibernéticos.</p>
+        </div>
+
+        <div class="article-body">
+          
+          <!-- Painel Lateral de Informações (Infobox) -->
+          <aside class="infobox">
+            <div class="infobox-header">
+              <h3>Segurança Digital</h3>
+              <span class="infobox-tag">Cibersegurança</span>
+            </div>
+            <div class="infobox-image">
+              <div class="placeholder-graphic">🔒</div>
+            </div>
+            <table class="infobox-table">
+              <tr>
+                <th>Área:</th>
+                <td>Tecnologia da Informação</td>
+              </tr>
+              <tr>
+                <th>Objetivo:</th>
+                <td>Confidencialidade, Integridade e Disponibilidade</td>
+              </tr>
+              <tr>
+                <th>Principais Vetores:</th>
+                <td>Phishing, Malware, Engenharia Social</td>
+              </tr>
+              <tr>
+                <th>Conceito Chave:</th>
+                <td>Defesa em Profundidade</td>
+              </tr>
+            </table>
+          </aside>
+
+          <!-- Conteúdo em Seções -->
+          <section id="introducao">
+            <h2>1. Introdução</h2>
+            <p>
+              A <strong>segurança digital</strong> (frequentemente referida como <em>cibersegurança</em>) é o conjunto de práticas, tecnologias e processos projetados para proteger computadores, redes, programas e dados contra acessos não autorizados, danos ou ataques cibernéticos.
+            </p>
+            <p>
+              Em uma sociedade cada vez mais conectada, a preservação da privacidade e a integridade das infraestruturas críticas digitais tornaram-se pilares essenciais para governos, empresas e indivíduos.
+            </p>
+          </section>
+
+          <section id="triade-cid">
+            <h2>2. A Tríade CIA (CID)</h2>
+            <p>
+              O modelo fundamental da segurança da informação é estruturado em três pilares essenciais:
+            </p>
+            <div class="cards-grid">
+              <div class="card">
+                <h3>Confidencialidade</h3>
+                <p>Garante que a informação só seja acessível por pessoas ou sistemas devidamente autorizados.</p>
+              </div>
+              <div class="card">
+                <h3>Integridade</h3>
+                <p>Assegura que a informação permaneça exata, completa e protegida contra modificações indevidas.</p>
+              </div>
+              <div class="card">
+                <h3>Disponibilidade</h3>
+                <p>Garante que os sistemas e dados estejam acessíveis aos usuários autorizados sempre que necessário.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="ameacas">
+            <h2>3. Principais Ameaças</h2>
+            <p>
+              O cenário de ciberameaças evolui continuamente. Entre os riscos mais comuns encontrados no ecossistema digital estão:
+            </p>
+            <ul class="styled-list">
+              <li><strong>Phishing:</strong> Técnicas de engano para induzir usuários a revelar dados confidenciais, como senhas ou cartões de crédito.</li>
+              <li><strong>Ransomware:</strong> Tipo de malware que criptografa os arquivos da vítima e exige resgate para o restabelecimento do acesso.</li>
+              <li><strong>Engenharia Social:</strong> Manipulação psicológica de pessoas para que executem ações ou divulguem informações sigilosas.</li>
+              <li><strong>Ataques DDoS:</strong> Sobrecarga intencional de servidores ou redes para tornar seus serviços indisponíveis.</li>
+            </ul>
+          </section>
+
+          <section id="boas-praticas">
+            <h2>4. Boas Práticas</h2>
+            <p>
+              A implementação de camadas de segurança reduz significativamente a vulnerabilidade a incidentes digitais:
+            </p>
+            <ol class="styled-list">
+              <li>Utilização de <strong>autenticação de dois fatores (2FA)</strong> em todas as contas digitais.</li>
+              <li>Criação de senhas fortes, exclusivas e armazenadas em gerenciadores de senhas seguros.</li>
+              <li>Manutenção de sistemas operacionais e softwares devidamente atualizados.</li>
+              <li>Realização periódica de backups criptografados fora da rede principal.</li>
+            </ol>
+          </section>
+
+          <section id="referencias">
+            <h2>5. Referências</h2>
+            <ol class="references-list">
+              <li>NIST Special Publication 800-53 – <em>Security and Privacy Controls for Information Systems</em>.</li>
+              <li>ISO/IEC 27001 – <em>Information security management systems requirements</em>.</li>
+              <li>OWASP Top 10 – <em>Standard Awareness Document for Developers and Web Application Security</em>.</li>
+            </ol>
+          </section>
+
+        </div>
+      </main>
+
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+      <p>Desenvolvido por: Gabriela dos Santos Assunção</p>
+      <p>HTML e CSS puro</p>
+    </footer>
+  </div>
+
+</body>
+</html>

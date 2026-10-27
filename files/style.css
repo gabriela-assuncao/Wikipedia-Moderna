@@ -1,0 +1,450 @@
+/* ==========================================================================
+   1. VARIÁVEIS DE CORES & CONFIGURAÇÃO DO TEMA (CLARO / ESCURO)
+   ========================================================================== */
+:root {
+  /* Tema Claro (Padrão) */
+  --bg-color: #f8f9fa;
+  --surface-color: #ffffff;
+  --surface-secondary: #f1f3f5;
+  --text-primary: #212529;
+  --text-secondary: #495057;
+  --text-muted: #868e96;
+  --accent-color: #2b6cb0;
+  --accent-hover: #1a4971;
+  --border-color: #e9ecef;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --sun-display: inline-block;
+  --moon-display: none;
+}
+
+/* Esconde a checkbox nativa do HTML */
+.theme-toggle-checkbox {
+  display: none;
+}
+
+/* Quando o Checkbox estiver marcado, ativa o Tema Escuro */
+.theme-toggle-checkbox:checked ~ .site-wrapper {
+  --bg-color: #0f172a;
+  --surface-color: #1e293b;
+  --surface-secondary: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --accent-color: #38bdf8;
+  --accent-hover: #7dd3fc;
+  --border-color: #334155;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --sun-display: none;
+  --moon-display: inline-block;
+}
+
+/* ==========================================================================
+   2. RESET & ESTILOS BASE
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+}
+
+/* ==========================================================================
+   3. CABEÇALHO (HEADER)
+   ========================================================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 2rem;
+  background-color: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.logo-icon {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.2rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.logo-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.logo-text span {
+  color: var(--accent-color);
+}
+
+.header-search {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  stroke: var(--text-muted);
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 2.4rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-secondary);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s, background-color 0.3s;
+}
+
+.search-input:focus {
+  border-color: var(--accent-color);
+}
+
+.theme-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  user-select: none;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--accent-color);
+}
+
+.sun-icon {
+  display: var(--sun-display);
+}
+
+.moon-icon {
+  display: var(--moon-display);
+}
+
+/* ==========================================================================
+   4. LAYOUT PRINCIPAL (SIDEBAR + CONTEÚDO)
+   ========================================================================== */
+.layout-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 1.5rem;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 3rem;
+  flex: 1;
+}
+
+/* Menu Lateral / Sumário */
+.sidebar {
+  position: sticky;
+  top: 5rem;
+  height: fit-content;
+}
+
+.toc {
+  background-color: var(--surface-color);
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.toc-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.4rem;
+}
+
+.toc ul {
+  list-style: none;
+}
+
+.toc li {
+  margin-bottom: 0.5rem;
+}
+
+.toc a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+  display: block;
+}
+
+.toc a:hover {
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   5. ARTIGO PRINCIPAL & INFOBOX
+   ========================================================================== */
+.article-header {
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.article-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.article-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* Sidebar Infobox (Card da Wikipedia) */
+.infobox {
+  float: right;
+  width: 280px;
+  margin: 0 0 1.5rem 1.5rem;
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.infobox-header {
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.infobox-header h3 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.infobox-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  background-color: var(--surface-secondary);
+  color: var(--accent-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.infobox-image {
+  background-color: var(--surface-secondary);
+  border-radius: 6px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.placeholder-graphic {
+  font-size: 3rem;
+}
+
+.infobox-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.infobox-table th,
+.infobox-table td {
+  padding: 0.4rem 0;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.infobox-table th {
+  color: var(--text-muted);
+  width: 40%;
+  font-weight: 500;
+}
+
+.infobox-table td {
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   6. SEÇÕES DE CONTEÚDO
+   ========================================================================== */
+section {
+  margin-bottom: 2.5rem;
+  clear: left;
+}
+
+section h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-size: 0.98rem;
+}
+
+/* Cards Grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0;
+}
+
+.card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  font-size: 1rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+/* Listas Estilizadas */
+.styled-list {
+  margin-left: 1.25rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.styled-list li {
+  margin-bottom: 0.5rem;
+}
+
+.references-list {
+  margin-left: 1.25rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.references-list li {
+  margin-bottom: 0.4rem;
+}
+
+/* ==========================================================================
+   7. RODAPÉ
+   ========================================================================== */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  background-color: var(--surface-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ==========================================================================
+   8. RESPONSIVIDADE (MOBILE & TABLETS)
+   ========================================================================== */
+@media (max-width: 850px) {
+  .layout-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .infobox {
+    float: none;
+    width: 100%;
+    margin: 0 0 1.5rem 0;
+  }
+
+  .header {
+    padding: 0.75rem 1rem;
+  }
+
+  .header-search {
+    max-width: 180px;
+  }
+
+  .theme-text {
+    display: none;
+  }
+}
