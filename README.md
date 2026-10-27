@@ -22,7 +22,7 @@ O objetivo principal é demonstrar o poder das recursos modernos do CSS (Grid, F
 
 ## Tecnologias Utilizadas
 
-- **HTML5:** Estrutura semântica (<header>, <main>, <aside>, <section>, <footer>).
+- **HTML5:** Estrutura semântica (header, main, aside, section, footer).
 
 - **CSS3:**
 
